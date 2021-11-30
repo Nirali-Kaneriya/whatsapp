@@ -21,7 +21,7 @@ jobs:
         with:
           flutter-version: '2.5.3'
       - run: flutter pub get
-      - run: flutter build apk --debug
+      - run: flutter build apk --debug --target-platform android-arm,android-arm64
  
       - name: Push to Releases
 
