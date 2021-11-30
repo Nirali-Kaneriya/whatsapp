@@ -21,12 +21,12 @@ jobs:
         with:
           flutter-version: '2.5.3'
       - run: flutter pub get
-      - run: flutter build apk --debug --target-platform android-arm,android-arm64
+      - run: flutter build apk  --target-platform=android-arm64
  
       - name: Push to Releases
 
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/apk/debug/*"
+          artifacts: 'build/app/outputs/apk/release/*.apk'
           tag: Whatsapp.v1.0.${{ github.run_number }}
           token: ${{ secrets.WHATSAPP_TOKEN }}
